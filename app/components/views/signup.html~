@@ -1,0 +1,98 @@
+
+
+ <!-- Dropdown Structure -->
+<header> 
+ <nav class="teal lighten-1" style="height:100px;">
+    <div class="container">
+    
+				<div class="nav-wrapper container">
+								
+								<a  href="#" class="brand-logo" style="font-size:35pt; padding-left:20%;padding-top:5%;">Register Your Shop</a>
+				</div>
+	</div>
+</nav>
+  
+
+
+   <!-- Page Layout here -->
+
+<main class="container row" style="padding-top:20px;">
+				<div class="col s12  card" style="padding-top:20px;">
+			 <form ng-submit="vm.signup()">
+                <div class="list">
+				<a href="#/login"><img src="resources/images/front.png"  href="#/home" style="width:100%; padding:;"></img></a>
+														 <div class="input-field row">
+																<input class="validate" type="email"  id="email" ng-model="vm.email" required="" />
+																<label for="last_name">Email</label>
+														</div>
+
+														<div class="input-field row">
+																<input class="validate" type="password"  id="password" ng-model="vm.password" required="" />
+																<label for="last_name">Password</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="password"  id="again" ng-model="vm.again" required="" />
+																<label for="last_name">Repeat Password</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="text"  id="shopname" ng-model="vm.shopname" required="" />
+																<label for="last_name">Shop Name</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="text"  id="address" ng-model="vm.address" required="" />
+																<label for="last_name">Address</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<textarea type="text"  id="description" ng-model="vm.description"></textarea>
+																<label for="last_name">Description</label>
+														 </div>
+														 <div><p style="color:red;">{{error_message}}</p></div>						 
+														<div class="container">
+														<center><button class="btn waves-effect waves-light" type="submit">
+															SignUp
+														</button></center>
+														
+													</div>
+													
+													<br>
+                </div>
+            </form>
+            									<div class="container">
+													<center> <a href="#/login">Back</button></a>
+														</div>	
+														<br>
+														<br>
+</div>
+					
+</main>
+
+
+
+	<br><br><br><br><br><br><br><br>
+        <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 offset-l1">
+                <h4 class="white-text">Sprint!</h4>
+                <p class="grey-text text-lighten-4">Print on-the-go</p>
+              </div>
+             
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="col s12 offset-l1">
+            © 2016
+            <a class="grey-text text-lighten-4 right" href="#!">Email us at junnoberinguela@gmail.com</a>
+            </div>
+          </div>
+        </footer>
+  
+
+
+
+
+

@@ -1,0 +1,107 @@
+
+
+ <!-- Dropdown Structure -->
+<header> 
+ <nav class="teal lighten-1" style="height:100px;">
+    <div class="container">
+				<div class="nav-wrapper container">
+								<span class="brand-logo" style="font-size:40pt; padding:15px;">Settings</span>
+								<a href="#/home" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+				</div>
+	</div>
+
+  
+
+<ul id="nav-mobile" class="side-nav fixed">
+	<li class="logo"><img src="resources/images/front.png"  href="#/home" style="width:90%; padding-top:50px;padding-left:10px;"></img></li>
+	   <center>
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+     
+             <h5>{{vm.shopname}}</h5>
+                 <div id="clock" style="" class="card-title" >loading ...
+		</div>
+
+            </div>
+          </div>
+   </center>
+	<li><a href="#/home">Requests</a></li>
+	<li><a href="#/courses">Courses</a></li>
+	<li class="active"><a href="#/settings">Settings</a></li>
+	<li ><a href="#/logs">Logs</a></li>
+	<li>
+				<button class="btn waves-effect waves-light" ng-click="logout()">Logout
+								<i class="material-icons right">exit</i>
+								</button>
+	 </li>
+	</ul>
+</nav>
+</header>
+
+   <!-- Page Layout here -->
+
+<main class="container row">
+<div class="col s12 offset-l1" style="padding-top:20px;">
+													<form ng-submit="editSettings()">
+	 												<div class="input-field row">
+																<input  type="text"  id="id" ng-model="vm.id" placeholder="{{vm.id}}" required="" disabled/>
+																<label for="last_name">Shop ID</label>
+														</div>
+
+														<div class="input-field row">
+																<input type="email"  id="email" ng-model="vm.email"  placeholder="{{vm.email}}" required="" disabled/>
+																<label for="last_name">Email Address</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="text"  id="shopname" ng-model="vm.shopname" placeholder="{{vm.shopname}}" required="" />
+																<label for="last_name">Shop Name</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="text"  id="address" ng-model="vm.address" placeholder="{{vm.adress}}" required="" />
+																<label for="last_name">Addresss</label>
+														 </div>
+														 
+														 <div class="input-field row">
+																<input class="validate" type="text"  id="description" ng-model="vm.description" placeholder="{{vm.description}}" required="" />
+																<label for="last_name">Description</label>
+														 </div>
+														 															
+														 <div><p style="color:red;">{{error_message}}</p></div>						 
+														<div class="container">
+														<center><button class="btn waves-effect waves-light" type="submit">
+															Save
+														</button></center>
+														</div>
+														</form>
+
+</div>
+	
+</main>
+
+
+	<br><br><br><br><br><br><br><br>
+        <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 offset-l1">
+                <h4 class="white-text">Sprint!</h4>
+                <p class="grey-text text-lighten-4">Print on-the-go</p>
+              </div>
+             
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="col s12 offset-l1">
+            © 2016
+            <a class="grey-text text-lighten-4 right" href="#!">Email us at junnoberinguela@gmail.com</a>
+            </div>
+          </div>
+        </footer>
+  
+
+
+
+
+

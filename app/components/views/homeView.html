@@ -1,0 +1,162 @@
+
+
+ <!-- Dropdown Structure -->
+<header> 
+ <nav class="teal lighten-1" style="height:100px;">
+    <div class="container">
+				<div class="nav-wrapper container">
+								<span class="brand-logo" style="font-size:40pt; padding:15px;">Requests</span>
+								<a href="#/home" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+				</div>
+	</div>
+
+  
+
+<ul id="nav-mobile" class="side-nav fixed">
+	<li class="logo"><img src="resources/images/front.png"  href="#/home" style="width:90%; padding-top:50px;padding-left:10px;"></img></li>
+	 <center>
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+     
+             <h5>{{userData.shopname}}</h5>
+                 <div id="clock" style="" class="card-title" >loading ...
+		</div>
+
+            </div>
+          </div>
+   </center>
+	<li class="active"><a href="#/home">Requests</a></li>
+	<li><a href="#/courses">Courses</a></li>
+	<li><a href="#/settings">Settings</a></li>
+	<li ><a href="#/logs">Logs</a></li>
+	<li>
+				<button class="btn waves-effect waves-light" ng-click="logout()">Logout
+								<i class="material-icons right">exit</i>
+								</button>
+	 </li>
+	</ul>
+</nav>
+</header>
+
+   <!-- Page Layout here -->
+
+<main class="container row">
+<div class="col s12 offset-l1" style="padding-top:20px;">
+				
+				
+  <div class="row">
+
+
+<div class="col s12"><span class="new badge"></span> <button ng-click="refresh()" class="modal-action modal-close waves-effect waves-green btn"><i class="large material-icons" style="font-size:200%;">loop</i></button>
+    <table id="tabletab1" class="display card" cellspacing="0" width="100%" style="opacity:0.8">
+        <thead>
+            <tr>
+					<th>ID</th>
+                    <th>Date</th>
+                    <th>User Email</th>
+                    <th>Full Name</th>
+                    <th>Filename</th>
+                    <th>Status</th>
+ 
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+ 					<th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                     <th></th>
+
+ 
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr ng-click='edit(item)' ng-repeat="item in all">
+            <td>{{item.id}}</td>
+                    <td>{{item.date_requested | amDateFormat:'MMMM Do YYYY, hh:mm:ss a'}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.firstname}} {{item.lastname}}</td>
+                    <td>{{item.filename}}</td>
+                    <td><span ng-style="item.status == 'pending' && { 'color' : 'red' } ||
+                    											item.status == 'ready' && { 'color' : 'green' } ||
+                    											item.status == 'completed' && { 'color' : 'gray' } ||
+                    											item.status == 'cancelled' && { 'color' : 'grey' }">{{item.status}}</span>
+								</td>
+            </tr>
+                 
+        </tbody>
+      
+   </table>
+
+  				<!-- Modal Structure -->
+		  <div id="modal1" class="modal modal-fixed-footer">
+
+					<div class="modal-content">
+		
+							  <div class="row"><h4 class="col s4">{{object.filename}}</h4>       <p class="col s4">Customer Name : {{object.firstname}} {{object.lastname}}</p>  <p class="col s4">Request ID : {{object.id}}</p></div>
+							  <div class="row"><h5 class="col s4">{{object.coursename}} - {{object.teacher}}</h5>       <p class="col s4">Email : {{object.email}}</p>   <p class="col s4">Date Requested : {{object.date_requested | amDateFormat:'dddd, MMMM Do YYYY @  h:mm:ss a'}}</p></div>
+							   <div class="row	"><p class="col s4">Download File : <a href="{{object.url}}" class="truncate">{{object.url}}</a></p>    <p class="col s4">Status : {{object.status}}</p>     <p class="col s4">User's Notes : {{object.notes}}</p></div>
+							  <div class="row">        
+							  			 <p class="col s3">Setting : {{object.isColored}}</p>
+							  			<p class="col s1"></p>
+										<p  class="col s2">
+										  <input class="with-gap validate" name="group1" type="radio" id="test1" ng-value="'ready'" ng-model="status"/>
+										  <label for="test1">Ready</label>
+										</p>
+										<p  class="col s2">
+										  <input class="with-gap validate" name="group1" type="radio" id="test2" ng-value="'pending'" ng-model="status"/>
+										  <label for="test2">Pending</label>
+										</p>
+										<p  class="col s2">
+										  <input class="with-gap validate" name="group1" type="radio" id="test3" ng-value="'cancelled'" ng-model="status" />
+										  <label for="test3">Cancelled</label>
+										</p>
+										<p  class="col s2">
+											<input class="with-gap validate" name="group1" type="radio" id="test4" ng-value="'completed'" ng-model="status"/>
+											<label for="test4">Completed</label>
+										</p>
+											
+								</div>
+					</div>
+			  <div class="modal-footer"> 
+			 					
+			   				<button class="col s4 modal-action modal-close waves-effect waves-green btn btn-flat" ng-click="update(object.id)" >Save</button>
+			   					 <button class="col s4 modal-action modal-close waves-effect waves-green btn btn-flat">Close</button>	
+			   					
+			   </div>
+ 		 </div>
+ 
+ </div>
+
+
+
+
+</div>
+	
+</main>
+
+
+	<br><br><br><br><br><br><br><br>
+        <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 offset-l1">
+                <h4 class="white-text">Sprint!</h4>
+                <p class="grey-text text-lighten-4">Print on-the-go</p>
+              </div>
+             
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="col s12 offset-l1">
+            © 2016
+            <a class="grey-text text-lighten-4 right" href="#!">Email us at junnoberinguela@gmail.com</a>
+            </div>
+          </div>
+        </footer>
+  
+
+
+

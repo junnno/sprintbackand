@@ -1,0 +1,162 @@
+
+
+ <!-- Dropdown Structure -->
+<header> 
+ <nav class="teal lighten-1" style="height:100px;">
+    <div class="container">
+				<div class="nav-wrapper container">
+								<span class="brand-logo" style="font-size:40pt; padding:15px;">Files</span>
+								<a href="#/home" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only"><i class="material-icons">menu</i></a>
+				</div>
+	</div>
+
+  
+
+<ul id="nav-mobile" class="side-nav fixed">
+	<li class="logo"><img src="resources/images/front.png"  href="#/home" style="width:90%; padding-top:50px;padding-left:10px;"></img></li>
+	   <center>
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+     
+             <h5>{{shopData.shopname}}</h5>
+                 <div id="clock" style="" class="card-title" >loading ...
+		</div>
+
+            </div>
+          </div>
+   </center>
+	<li><a href="#/home">Requests</a></li>
+	<li  class="active"><a href="#/courses">Courses</a></li>
+	<li><a href="#/settings">Settings</a></li>
+	<li ><a href="#/logs">Logs</a></li>
+	<li>
+				<button class="btn waves-effect waves-light" ng-click="logout()">Logout
+								<i class="material-icons right">exit</i>
+								</button>
+	 </li>
+	</ul>
+</nav>
+</header>
+
+   <!-- Page Layout here -->
+
+<main class="container row">
+
+  <div class="col s12 offset-l1" style="padding-top:5%;">
+    <div class="row">
+     <button ng-click="back()" class="modal-action modal-close waves-effect waves-green btn"><</button>
+			 <button ng-click="add()" class="modal-action modal-close waves-effect waves-green btn">Add a File</button>
+				<table id="tabletab2" class="display card" cellspacing="1" width="100%" style="opacity:0.8">
+					<thead>
+						<tr>
+								<th>File ID</th>
+								<th>Date Uploaded</th>
+						        <th>Filename</th>
+						        <th>No. of Pages</th>
+						        <th>Action</th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+						        <th></th>
+						        <th></th>
+						        <th></th>
+						        <th></th>
+						        <th></th>
+						</tr>
+					</tfoot>
+					<tbody>
+						<tr ng-repeat="item in files">
+						        <td>{{item.id}}</td>
+						        <td>{{item.date_uploaded | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a'}}</td>
+						        <td>{{item.filename}}</td>
+						        <td>{{item.no_of_pages}}</td>
+						        <td>
+						        	    <a href="" ng-click="edit(item)"><i class="large material-icons" style="font-size:200%;">edit</i></a>
+										<a href="" ng-click="deleteFile(item.id)"><i class="large material-icons" style="font-size:200%;">delete</i></a>
+								</td>
+						</tr>
+						     
+					</tbody>
+				  
+			   </table>
+			<form ng-submit="addFile()">
+					<!-- Modal Structure -->
+					  <div id="modal1" class="modal bottom-sheet" style="">
+					
+								<div class="modal-content">
+												<div class="row">
+								 								<div class="input-field col s6">
+																			<input class="validate" type="text"  id="filename" ng-model="vm.filename" required="" />
+																			<label for="last_name">Filename</label>
+																	 </div>
+																	 
+																	 <div class="input-field col s2">
+																			<input class="validate" type="text"  id="teacher" ng-model="vm.no_of_pages" required="" />
+																			<label for="last_name"># of Pages</label>
+																	 </div>
+												</div>
+												<div class="row">
+										<button class="col s4 modal-action modal-close waves-effect waves-green btn btn-flat">Close</button>	
+						   				<button class="col s4 offset-s4 waves-effect waves-green btn btn-flat" >Save</button>
+						   				
+						   				</div>
+								</div>
+
+
+			 		 </div>
+
+					</form>
+								<form ng-submit="editFile()">
+								<!-- Modal 2 Structure -->
+									  <div id="modal2" class="modal bottom-sheet" style="">
+					
+												<div class="modal-content">
+																<div class="row">
+												 								<div class="input-field col s6">
+																							<input class="validate" type="text"  id="filename" ng-model="vm.filename" placeholder="{{vm.filename}}" required="" />
+																							<label for="last_name"> Filename</label>
+																					 </div>
+																					 
+																					 <div class="input-field col s6">
+																							<input class="validate" type="text"  id="no_of_pages" ng-model="vm.no_of_pages" placeholder="{{vm.no_of_pages}}"required="" />
+																							<label for="last_name">No. of Pages</label>
+																					 </div>
+																</div>
+																<div class="row">
+																		<button class="col s4 modal-action modal-close waves-effect waves-green btn btn-flat">Close</button>	
+														   				<button class="col s4 offset-s4 waves-effect waves-green btn btn-flat" >Save</button>
+												   				
+												   				</div>
+												</div>
+							 		 </div>
+						</form>
+
+ 		 </div>
+</div>
+</main>
+
+
+
+
+	<br><br><br><br><br><br><br><br>
+        <footer class="page-footer teal">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 offset-l1">
+                <h4 class="white-text">Sprint!</h4>
+                <p class="grey-text text-lighten-4">Print on-the-go</p>
+              </div>
+             
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="col s12 offset-l1">
+            © 2016
+            <a class="grey-text text-lighten-4 right" href="#!">Email us at junnoberinguela@gmail.com</a>
+            </div>
+          </div>
+        </footer>
+  
+  
+

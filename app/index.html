@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="sprint" class="no-js"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sprint! Print on-the-go</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/">
+  
+    <!--CSS Stuff-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
+  <link rel="stylesheet" href="resources/css/app.css">   
+  <link rel="stylesheet" href="resources/css/materialize.min.css">  
+  
+</head>
+<body>
+  
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+ 	 <div ng-view></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <!--  Scripts-->
+
+
+ <!--Dependency Scirpts--->
+ <!---Materialize Scirpts--->
+  <!--<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+  <script src="resources/js/jquery-2.2.3.min.js"></script>
+  <script src="resources/js/materialize.min.js"></script> 
+<script src="resources/js/init.js"></script>
+  <script src="resources/bower/angular/angular.js"></script>
+     <script src="resources/js/angular-materialize.js"></script> 
+  <script src="resources/bower/angular-route/angular-route.min.js"></script>
+      <script src="resources/angularbknd-sdk/dist/backand.min.js"></script>
+     <script src="https://api.backand.com:4000/socket.io/socket.io.js"></script>
+     <script src="resources/bower/moment/moment.js"></script>
+     <script src="resources/bower/angular-moment/angular-moment.js"></script>
+  <script src="app.js"></script>
+  
+  <script src="components/js/controllers.js"></script>
+  <script src="components/js/services.js"></script>
+  
+  <!--Datatables-->
+<link rel="stylesheet" type="text/css" href="resources/DataTables/DataTables-1.10.11/css/jquery.dataTables.min.css"/>
+<script type="text/javascript" src="resources/DataTables/DataTables-1.10.11/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="resources/DataTables/jquery.dataTables.columnFilter.js"></script>
+</body>
+</html>
