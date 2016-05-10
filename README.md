@@ -2,7 +2,7 @@
 Print On-the-Go
 
 ###About the Project
-This is an AngularJS web app which is a component of Sprint! Print Request System. It is developed using AngularJS as front-end framework with Backand as the backend server. Backand is a cloud backend service provider for AngularJS. 
+This is an AngularJS web app which is a component of Sprint! Print Request System. This is for the use of Print Shop owners in accepting print requests, downloading file uploads and updating the requests for the customers. It is developed using AngularJS - a popular javascript front-end framework with Backand(Back&) as the back-end server. Backand is a cloud-based back-end service provider for AngularJS. 
 
 ###Installation
 Make sure you have installed NPM and Node
