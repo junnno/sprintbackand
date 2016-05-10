@@ -19,4 +19,11 @@ You can now access the local web server on localhost:8000
 
 
 
+This project is for CMSC 190-2 Special Problems
+
+
+You can email me at junnoberinguela@gmail.com
+
+
+
 
